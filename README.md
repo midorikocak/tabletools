@@ -78,17 +78,10 @@ If you deal with CSV files, you can import the data in a `CsvTable`.
 $csvTable = new CsvTable('tests/small-name.csv');
 ```
 
-### Columns
-
-Filters columns other than specified.
-
-```php
-$columns = $this->arrayTable->columns(['first_name', 'last_name'])->run();
-```
 
 ### Columns
 
-Filters columns other than specified.
+Get only specified columns.
 
 ```php
 $columns = $this->arrayTable->columns(['first_name', 'last_name'])->run();

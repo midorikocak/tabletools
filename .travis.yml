@@ -1,0 +1,22 @@
+dist: trusty
+language: php
+
+php:
+  - 7.4
+
+## Cache composer
+cache:
+  directories:
+    - $HOME/.composer/cache
+
+matrix:
+  include:
+    - php: 7.4
+      env: 'COMPOSER_FLAGS="--prefer-stable --prefer-lowest"'
+
+before_script:
+  - travis_retry composer update ${COMPOSER_FLAGS} --no-interaction --prefer-dist
+
+script:
+  - vendor/bin/phpcs --standard=psr12 src/
+  - vendor/bin/phpunit --coverage-text --coverage-clover=coverage.clover

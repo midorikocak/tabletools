@@ -43,10 +43,10 @@ class DatabaseTable implements TableInterface
 
     public function range(int $offset, ?int $limit = null): self
     {
-        if ($offset !== 0) {
+        if ($offset !== null && $offset !== 0) {
             $this->db = $this->db->offset($offset);
         }
-        if ($limit) {
+        if ($limit !== null) {
             $this->db = $this->db->limit($limit);
         }
 

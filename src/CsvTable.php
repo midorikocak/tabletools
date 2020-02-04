@@ -74,11 +74,11 @@ class CsvTable implements TableInterface
 
     public function range(int $offset, ?int $limit = null): self
     {
-        if ($limit && $offset) {
+        if ($limit !== null) {
             $this->statement->limit($limit);
         }
 
-        if ($limit && $offset) {
+        if ($limit !== null && $offset !== null) {
             $this->statement->offset($offset);
         }
 

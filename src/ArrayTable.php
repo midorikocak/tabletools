@@ -87,7 +87,7 @@ class ArrayTable implements TableInterface
 
     public function range(int $offset, ?int $limit = null): self
     {
-        if (!$limit) {
+        if ($limit === null) {
             $this->toReturn = array_slice($this->toReturn, $offset);
         } else {
             $this->toReturn = array_slice($this->toReturn, $offset, $limit);

@@ -52,7 +52,7 @@ interface TableInterface
 
 ### DatabaseTable
 
-To use the `DatabaseTable` class, inject it with an object that implements `midorikocak/nanodb/tabletoolsbaseInterface`. 
+To use the `DatabaseTable` class, inject it with an object that implements `midorikocak/nanodb/DatabaseInterface`. 
 Or a simple PDO wrapper with same methods)
 
 ```php
